@@ -11,16 +11,21 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="TMP_USER_DATA")
 public class User implements Serializable{
 	private static final long serialVersionUID = 0x62A6DA99AABDA8A8L;
-	@Column
+	
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
+	@Column(name = "userId")
 	private Integer userId;
-	@Column
+	
+	@Column(name="userName")
 	private String userName;
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

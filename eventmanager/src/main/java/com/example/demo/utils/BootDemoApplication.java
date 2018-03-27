@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import javax.sql.DataSource;
 
 import com.example.demo.repository.UserRepository;
 
@@ -14,6 +15,8 @@ import com.example.demo.repository.UserRepository;
 @EnableJpaRepositories("com.example.demo.*")
 @EntityScan("com.example.demo.*")
 public class BootDemoApplication {
+	@Autowired
+	DataSource dataSource;
 	@Autowired
 	UserRepository userRepository;
 	public static void main(String[] args) {
