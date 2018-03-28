@@ -7,6 +7,7 @@ public class UserDto {
     Integer userId;
     String userName;
     List<SkillDto> skillDtos= new ArrayList<>();
+    
     public UserDto(Integer userId, String userName, List<SkillDto> skillDtos) {
         this.userId = userId;
         this.userName = userName;
